@@ -1,0 +1,347 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <title>Scopomia - Product of Azerbaijan</title>
+    <meta name="Description" content="Product of Azerbaijan">
+    <link rel="canonical" href="index.html">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="og:title" content="SCOPOMIA - Product of Azerbaijan">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.html">
+    <!-- <meta property="og:image" content="../www.azgranata.az/image.jpg"> -->
+    
+    <meta name="google-site-verification" content="oLUghwR2DI_WI37JoR4HP5gVL1gLp1dqFBkARVYcqGo" />
+    
+    <link rel="alternate" hreflang="x-default" href="index.html">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script','../connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '288062208463797'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+        src="https://www.facebook.com/tr?id=288062208463797&amp;ev=PageView&amp;noscript=1"/> 
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
+    
+    
+    
+</head>
+<body>
+    <div class="logo-o">
+      <div class="logo-c">
+          <img src="logo.png" alt="Scopomia loqo">
+		  <div class="lang" style="margin-top: -40px;">
+		  <a href="index8526.html?lang=az"><img class="lang" src="flags/az.png" style="width: 20px;"></a> <a href="index9ed2.html?lang=en"><img class="lang" src="flags/gb.png" style="width: 20px;"></a> <a href="index2139.html?lang=ru"><img class="lang" src="flags/ru.png" style="width: 20px;"></a></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="split left">
+        <h1>Emiliano</h1>
+        <a href="{% url 'core:product' %}?menu=Emiliano" class="button">Enter</a>
+      </div>
+      <div class="split right">
+        <h1>Adawall</h1>
+        <a href="{% url 'core:product' %}?menu=Adawall" class="button">Enter</a>
+      </div>
+    </div>
+    <script>
+        
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const container = document.querySelector(".container");
+        const logo = document.querySelector(".logo-o");
+
+        left.addEventListener("mouseenter", () => {
+          container.classList.add("hover-left");
+          logo.classList.add("logo-r");
+        });
+
+        left.addEventListener("mouseleave", () => {
+          container.classList.remove("hover-left");
+          logo.classList.remove("logo-r");
+        });
+
+        right.addEventListener("mouseenter", () => {
+          container.classList.add("hover-right");
+          logo.classList.add("logo-l");
+        });
+
+        right.addEventListener("mouseleave", () => {
+          container.classList.remove("hover-right");
+          logo.classList.remove("logo-l");
+        });
+
+        
+    </script>
+</body>
+
+</html>
+<style>
+    :root {
+  --container-bg-color: #333;
+  --left-bg-color: rgba(120, 6, 0, 0.75);
+  --left-button-hover-color: rgba(255, 255, 255, 0.85);
+  --right-bg-color: rgba(120, 6, 0, 0.75);
+  --right-button-hover-color: rgba(255, 255, 255, 0.85);
+  --hover-width: 60%;
+  --other-width: 40%;
+  --speed: 1000ms;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Light.html');
+	src: local('â˜º'), url('fonts/Montserrat-Light-2.html') format('woff'), url('fonts/Montserrat-Light-3.html') format('truetype'), url('fonts/Montserrat-Light-4.html') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Medium.html');
+	src: local('â˜º'), url('fonts/Montserrat-Medium-2.html') format('woff'), url('fonts/Montserrat-Medium-3.html') format('truetype'), url('fonts/Montserrat-Medium-4.html') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+html, body {
+  padding:0;
+  margin:0;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  line-height: 40px;
+  width: 100px;
+  text-align: center;
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+  transform: translateX(-50%);
+  font-weight: 300;
+  background: #fff;
+  border-radius: 2px;
+}
+.logo-o{
+    display: block;
+    position: fixed;
+    width: 184px;
+    height: 184px;
+    background: rgba(153, 36, 30, 0.5);
+    border-radius: 100%;
+    left: 50%;
+    margin-left: -92px;
+    top: 50%;
+    margin-top: -92px;
+    z-index: 4;
+    transition: var(--speed) all ease-in-out;
+}
+.logo-c{
+    display: block;
+    width: 174px;
+    height: 174px;
+    background: #99241e;
+    text-align: center;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.logo-c img{
+    position: relative;
+    z-index: 6;
+    width: 130px;
+    margin-top: 55px;
+}
+.split.left .button:hover {
+  background-color: var(--left-button-hover-color);
+  border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover {
+  background-color: var(--right-button-hover-color);
+  border-color: var(--right-button-hover-color);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left:0;
+  background: url("{% static 'img/left.png' %}") center center no-repeat;
+  background-size: cover;
+  border-right: 3px solid #fff;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.split.left:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--left-bg-color);
+}
+
+.split.right {
+  right:0;
+  background: url("{% static 'img/right.png' %}") center center no-repeat;
+  background-size: cover;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.split.right:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--right-bg-color);
+  border-left: 3px solid #fff;
+}
+
+.split.left, .split.right, .split.right:before, .split.left:before {
+  transition: var(--speed) all ease-in-out;
+}
+.logo-l{
+    left: 40%;
+}
+.logo-r{
+    left: 60%;
+}
+.hover-left .left {
+  width: var(--hover-width);
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-left .right:before {
+  z-index: 2;
+}
+
+
+.hover-right .right {
+  width: var(--hover-width);
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .left:before {
+  z-index: 2;
+}
+
+@media(max-width: 800px) {
+  .split {
+    width: 100%;
+    height: 50%;
+  }
+  .split.left {
+    left:0;
+    border-right: 0;
+    border-bottom: 3px solid #fff;
+  }
+
+  .split.right {
+    left:0;
+    top: 50%;
+  }
+
+  .split.right:before {
+    border-left: 0;
+    border-top: 3px solid #fff;
+  }
+  h1 {
+    font-size: 24px;
+  }
+
+  .button {
+    width: 100px;
+    top: 56%;
+  }
+
+
+  .logo-l{
+      left: 50%;
+      top: 40%;
+  }
+  .logo-r{
+      left: 50%;
+      top: 60%;
+  }
+  .hover-left .left {
+    width: 100%;
+    height: 60%;
+  }
+
+  .hover-left .right {
+    width: 100%;
+    height: 40%;
+    top: 60%;
+  }
+
+
+  .hover-right .right {
+    width: 100%;
+    height: 60%;
+    top: 40%;
+  }
+
+  .hover-right .left {
+    width: 100%;
+    height: 40%;
+  }
+
+
+
+}
+
+</style>

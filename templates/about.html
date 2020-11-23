@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <h2>{{settings.about_title}}</h2>
+                        <!-- <p>Home <span>-</span> Shop Category</p> -->
+                        <!-- <style>.breadcrumb_bg {
+                            background-image: url("{{ settings.about_image.url }}");
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            }
+                          </style> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% for i in object_list %}
+<br>
+<h1>{{i.title}}</h1><br>
+<p>{{i.content}}</p>
+
+<style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    </style>
+
+{% endfor %}
+
+
+{% endblock content %}

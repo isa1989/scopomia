@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block content %}
+ <!--================Home Banner Area =================-->
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Shop Category</h2>
+                            <p>Home <span>-</span> Shop Category</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+    <section class="cat_product_area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left_sidebar_area">
+                        <aside class="left_widgets p_filter_widgets">
+                            <div class="l_w_title">
+                                <h3>Browse Categories</h3>
+                            </div>
+                            <div class="widgets_inner">
+                                <ul class="list">
+                                    {% for item in category_models %}
+                                    <li>
+                                        <a href="{{ item.get_absolute_url }}">{{item.name}}</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </aside>{% url  "core:deta"%}?category={{item/id}}
+                
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-12">
+                          
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center latest_product_inner">
+                        {% for item in items %}
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item">
+                                <a href="{{ item.get_absolute_url }}">
+                                    <img src="{{ item.items.first.images.url }}" alt="">
+                                </a>
+                                    <div class="single_product_text">
+                                        <h4>{{ item.title}}</h4>
+                                        <h3>{{ item.price}} AZN</h3>
+                                        <a href="{{ item.get_add_to_cart_url }}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% if is_paginated %}
+                        <div class="col-lg-12">
+                            <div class="pageination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        {% if page_obj.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                                <i class="ti-angle-double-left"></i>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+                                                <span class="sr-only">(current)</span>
+                                            </a>
+                                        </li>
+                                        {% if page_obj.has_next %}                            
+                                        <li class="">
+                                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                                <i class="ti-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Category Product Area =================-->
+
+    <!-- product_list part start-->
+    <section class="product_list best_seller">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="section_tittle text-center">
+                        <h2>Best Sellers <span>shop</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-12">
+                    <div class="best_product_slider owl-carousel">
+                        {% for item in last_items %}
+                        <div class="single_product_item">
+                            <img src="{{ item.items.first.images.url }}" alt="">
+                            <div class="single_product_text">
+                                <h4>{{item.title}}</h4>
+                                <h3>{{ item.price }} AZN</h3>
+                            </div>
+                       </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product_list part end-->
+    
+        
+{% endblock content %}

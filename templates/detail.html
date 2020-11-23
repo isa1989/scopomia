@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+<!-- {% load static %} -->
+{% block content %}
+<!doctype html>
+<html lang="zxx">
+   <body>
+      <!-- breadcrumb start-->
+      <section class="breadcrumb breadcrumb_bg">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-lg-8">
+                  <div class="breadcrumb_iner">
+                     <!-- <div class="breadcrumb_iner_item">
+                        <h2>Shop Single</h2>
+                        <p>Home <span>-</span> Shop Single</p>
+                     </div> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- breadcrumb start-->
+      <!--================End Home Banner Area =================-->
+      <!--================Single Product Area =================-->
+      <div class="product_image_area section_padding">
+         <div class="container">
+            <div class="row s_product_inner justify-content-between">
+               <div class="col-lg-7 col-xl-7">
+                  <div class="product_slider_img">
+                     <!-- <li>
+                        <a href="{% url 'core:product' %}?menu={{object.brendcategory.category.name}}">Kateqoriyaya qayit</a>
+                        </li> -->
+                     <h2 style="text-align:center">Slideshow Gallery</h2>
+                     <div class="container ima">
+                        <div class="row ima mb-4" style="display: block;">
+                           <div class="col-12">
+                              <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                              <img id="expandedImg" style="width:100%; height: 25rem;" src="{{object.items.first.images.url}}">
+                              <div id="imgtext"></div>
+                           </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-12">
+                               {% for i in photos %}
+                              <div class="column ima">
+                              <img src="{{ i.images.url }}" alt="" style="width:100%; height: 100px;" onclick="myFunction(this);">
+                              </div>
+                              {% endfor %}
+                            </div>
+                         </div>
+                        
+                    </div>
+                      
+                      
+                     
+                  </div>
+               </div>
+               <div class="col-lg-5 col-xl-4">
+                  <br><br><br>
+                  <div class="s_product_text">
+                     <h3>{{ object.title }}</h3>
+                     <ul class="list">
+                        {{object.other_title}}
+                        </p>
+                     </ul>
+                     <h2>{{ object.price }} AZN</h2>
+                     <ul class="list">
+                        <li>
+                           <a class="active" href="{% url 'core:product' %}?menu={{object.brendcategory.category.name}}">
+                           <span>Kateqoriyaya</span> &nbsp;&nbsp;&nbsp;{{ object.brendcategory.name }}</a>
+                        </li>
+                     </ul>
+                     <div class="card_area d-flex justify-content-between align-items-center">
+                        <!-- <div class="product_count">
+                           <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                           <input class="input-number" type="text" value="1" min="0" max="10">
+                           <span class="number-increment"> <i class="ti-plus"></i></span>
+                           </div> -->
+                        <a href="{% url 'core:checkout' %}" class="btn_3">SIfaris et</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--================End Single Product Area =================-->
+         <!--================Product Description Area =================-->
+         <section class="product_description_area">
+            <div class="container">
+               <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                        aria-selected="true">Description</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                        aria-selected="false">Specification</a>
+                  </li>
+               </ul>
+               <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                     <p>
+                        {{object.description|safe}}
+                     </p>
+                  </div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                     <div class="table-responsive">
+                        <table class="table">
+                           <tbody>
+                              {{object.specification|safe}}
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+      </section>
+      </div>
+      <!--================End Product Description Area =================-->
+      <!-- product_list part start-->
+      <section class="product_list best_seller">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-lg-12">
+                  <div class="section_tittle text-center">
+                     <h2>Best Sellers <span>shop</span></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+               <div class="col-lg-12">
+                  <div class="best_product_slider owl-carousel">
+                     {% for item in last_items %}
+                     <div class="single_product_item">
+                        <a href="{{ item.get_absolute_url }}">
+                        <img src="{{ item.items.first.images.url }}" alt="">
+                        <div class="single_product_text">
+                           <h4>{{item.title}}</h4>
+                           <h3>{{ item.price }} AZN</h3>
+                        </div>
+                        </a>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- product_list part end-->
+      <style>
+         * {
+           box-sizing: border-box;
+         }
+         
+         body {
+           margin: 0;
+           font-family: Arial;
+         }
+         
+         /* The grid: Four equal columns that floats next to each other */
+         .column {
+           float: left;
+           width: 25%;
+           padding: 10px;
+         }
+         
+         /* Style the images inside the grid */
+         .column img {
+           opacity: 0.8; 
+           cursor: pointer; 
+         }
+         
+         .column img:hover {
+           opacity: 1;
+         }
+         
+         /* Clear floats after the columns */
+         .row ima:after {
+           content: "";
+           display: table;
+           clear: both;
+         }
+         
+         /* The expanding image container */
+         .container ima {
+           position: relative;
+           display: none;
+         }
+         
+         /* Expanding image text */
+         #imgtext {
+           position: absolute;
+           bottom: 15px;
+           left: 15px;
+           color: white;
+           font-size: 20px;
+         }
+         
+         /* Closable button inside the expanded image */
+         .closebtn {
+           position: absolute;
+           top: 10px;
+           right: 15px;
+           color: white;
+           font-size: 35px;
+           cursor: pointer;
+         }
+         </style>
+      <script>
+         function myFunction(imgs) {
+           var expandImg = document.getElementById("expandedImg");
+           var imgText = document.getElementById("imgtext");
+           expandImg.src = imgs.src;
+           imgText.innerHTML = imgs.alt;
+           expandImg.parentElement.style.display = "block";
+         }
+         </script>
+      {% endblock content%}
