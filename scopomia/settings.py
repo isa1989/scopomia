@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'jet.dashboard',
     'jet',
-    'modeltranslation',
+    # 'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -158,9 +158,9 @@ WSGI_APPLICATION = 'scopomia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dvg_db_name',
-        'USER': 'dvg_db_user',
-        'PASSWORD': 'jNAZkxfgBBT9bkRSE6n83aJg78Vk7NSf',
+        'NAME': 'starex_db_name',
+        'USER': 'starex_db_user',
+        'PASSWORD': '6NwpPtvGyCsMLAKDZtazEP9WjANze25eP3e2UJdWrgrrKq',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -190,15 +190,15 @@ from django.utils.translation import ugettext_lazy as _
 
 LANGUAGE_CODE = 'en'
 
-LANGUAGES = (
-    ('az', _('Azerbaijani')),
-    ('ru', _('Russian')),
-)
+# LANGUAGES = (
+#     ('az', _('Azerbaijani')),
+#     ('ru', _('Russian')),
+# )
 
 # MODELTRANSLATION_LANGUAGES = ('en', 'az')
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+# MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
-LANGUAGE_CODE = 'az'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 

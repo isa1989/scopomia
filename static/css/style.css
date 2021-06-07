@@ -2353,13 +2353,14 @@ ul {
   }
   /* line 245, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
   .navbar-brand img {
+    max-height: 65px;
     max-width: 100px;
     margin: 0 auto;
     position: absolute;
     left: 0;
-    right: 0;
+    right: 175px;
     display: inline-block;
-    top: 0;
+    top: -20px;
   }
   /* line 255, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
   .navbar-light .navbar-toggler {
@@ -7414,8 +7415,15 @@ h6 {
 }
 
 /* line 1, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_breadcrumb.scss */
-.breadcrumb_bg {
-  background-image: url("../img/emiliano.jpg");
+.breadcrumb_bgem {
+  background-image: url("../img/emil.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.breadcrumb_bgad {
+  background-image: url("../img/ada.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

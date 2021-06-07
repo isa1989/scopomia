@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+{% load base_filter %}
+
+
 <!-- {% load static %} -->
 {% block content %}
 <!doctype html>
 <html lang="zxx">
-   <body>
+   <!-- <body> -->
       <!-- breadcrumb start-->
-      <section class="breadcrumb breadcrumb_bg">
+      {% if object.brendcategory.category.name == "Emiliano" %} 
+<section class="breadcrumb breadcrumb_bgem">
+      {% elif object.brendcategory.category.name == "Adawall" %}
+   <section class="breadcrumb breadcrumb_bgad">
+   {% endif %}
          <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center">{{object.brendcategory.category}}
                <div class="col-lg-8">
                   <div class="breadcrumb_iner">
                      <!-- <div class="breadcrumb_iner_item">
@@ -36,14 +43,15 @@
                            <div class="col-12">
                               <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
                               <img id="expandedImg" style="width:100%; height: 25rem;" src="{{object.items.first.images.url}}">
-                              <div id="imgtext"></div>
+                              <div id="imgtext" style="right:2em;">{% image_parse object.items.first.images.url %}</div>
                            </div>
+                           <!-- {% image_parse object.items.images.url %} -->
                          </div>
                          <div class="row">
                             <div class="col-12">
                                {% for i in photos %}
                               <div class="column ima">
-                              <img src="{{ i.images.url }}" alt="" style="width:100%; height: 100px;" onclick="myFunction(this);">
+                              <img src="{{ i.images.url }}" alt="{% image_parse i.images.url %}" style="width:100%; height: 100px;" onclick="myFunction(this);">
                               </div>
                               {% endfor %}
                             </div>
@@ -113,8 +121,8 @@
                   </div>
                </div>
             </div>
-      </div>
-      </section>
+          </div>
+         </section>
       </div>
       <!--================End Product Description Area =================-->
       <!-- product_list part start-->
@@ -191,8 +199,8 @@
          #imgtext {
            position: absolute;
            bottom: 15px;
-           left: 15px;
-           color: white;
+           left: 25px;
+           color: #ff3368;
            font-size: 20px;
          }
          

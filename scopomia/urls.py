@@ -6,14 +6,16 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404
 
-from core.views import error_404
+# from core.views import error_404
 
 
-def response_error_handler(request, exception=None):
-    return HttpResponse('Error handler content', status=404)
+# def response_error_handler(request, exception=None):
+#     return HttpResponse('Error handler content', status=404)
 
 
-handler404 = error_404
+# handler404 = error_404
+handler404 = 'core.views.handler404'
+handler500 = 'core.views.handler500'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

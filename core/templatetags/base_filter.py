@@ -1,5 +1,7 @@
 from ..models import Settings, Menu
 from django import template
+from urllib.parse import urlparse
+from os.path import splitext, basename
 
 register = template.Library()
 
@@ -25,3 +27,10 @@ def get_settings():
 #     if qs.exists():
 #         return qs[0].items.count()
 #     return 0
+
+@register.simple_tag
+def image_parse(value):
+    value = str(value)
+    disassembled = urlparse(value)
+    filename, file_ext = splitext(basename(disassembled.path))
+    return filename

@@ -3,9 +3,9 @@
 
 <!doctype html>
 <html lang="zxx">
-   {% get_current_language as LANGUAGE_CODE %}
-   {% get_available_languages as LANGUAGES %}
-   <html class="no-js" lang="{{ LANGUAGE_CODE|default:"az" }}">
+   <!-- {% get_current_language as LANGUAGE_CODE %} -->
+   <!-- {% get_available_languages as LANGUAGES %} -->
+   <!-- <html class="no-js" lang="{{ LANGUAGE_CODE|default:"az" }}"> -->
    <head>
       <!-- Required meta tags -->
       <meta charset="utf-8">
@@ -35,12 +35,14 @@
    </head>
    <body>
       <!--::header part start::-->
-      <header class="main_menu home_menu">
+      <header class="main_menu home_menu" style="background-color: #ecfdff;">
          <div class="container">
             <div class="row align-items-center">
                <div class="col-lg-12">
                   <nav class="navbar navbar-expand-lg navbar-light">
-                     <a class="navbar-brand" href="/index/"> <img src="{{ settings.logo_header.url}}" alt="logo" height="30px" > </a>
+                     {% if settings.logo_header %}
+                     <a class="navbar-brand" href="/index/"> <img src="{{ settings.logo_header.url}}" alt="logo" height="70px" > </a>
+                    {% endif %}
                      <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -59,8 +61,8 @@
                      <!-- <div class="hearer_icon d-flex">
                         <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                      </div> -->
-                     &nbsp
-                     <div class="navbar__language-wrapper">
+                     <!-- &nbsp -->
+                     <!-- <div class="navbar__language-wrapper">
                         <button class="navbar__current-language">
                         {% for lang in LANGUAGES %}
                         <span class {% if lang.0 == LANGUAGE_CODE %}class="active"{% endif %} data-lang="{{ lang.0 }}">
@@ -68,12 +70,12 @@
                         </span>
                         {% endfor %}
                         </button>
-                     </div>
+                     </div> -->
                   </nav>
                </div>
             </div>
          </div>
-         <div class="search_input" id="search_input_box">
+         <!-- <div class="search_input" id="search_input_box">
             <div class="container ">
                <form class="d-flex justify-content-between search-inner">
                   <input type="text" class="form-control" id="search_input" placeholder="Search Here">
@@ -81,7 +83,7 @@
                   <span class="ti-close" id="close_search" title="Close Search"></span>
                </form>
             </div>
-         </div>
+         </div> -->
       </header>
       <!-- Header part end-->
       {% block content %}
@@ -157,9 +159,9 @@
                   <div class="col-lg-4">
                      <div class="footer_icon social_icon">
                         <ul class="list-unstyled">
-                           <li><a href="{{ settings.facebook_url }}" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
-                           <li><a href="{{ settigns.instagram_url }}" class="single_social_icon"><i class="fab fa-instagram"></i></a></li>
-                           <li><a href="{{ settings.youtube_url }}" class="single_social_icon"><i class="fab fa-youtube"></i></a></li>
+                           <li><a href="{{ settings.facebook_url }}" class="single_social_icon" target="_blank"><i class="fab fa-facebook-f" ></i></a></li>
+                           <li><a href="{{ settigns.instagram_url }}" class="single_social_icon" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                           <li><a href="{{ settings.youtube_url }}" class="single_social_icon" target="_blank"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                      </div>
                   </div>
